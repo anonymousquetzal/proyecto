@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Inicio</title>
+    </h:head>
+
+    <h:body style="background-color:black;">
+
+        <div class="card" style="background-color: black; color: white">          
+            <p:tabMenu activeIndex="#{param.i}">
+                <p:menuitem value="Inicio" outcome="index" icon="pi pi-fw pi-home">
+                    <f:param name="i" value="0"/>
+                </p:menuitem>
+                <p:menuitem value="Mostrar Personas" outcome="name-basics" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="1"/>
+                </p:menuitem>
+                <p:menuitem value="Mostrar Titulos" outcome="title-basics" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="2"/>
+                </p:menuitem>
+                <p:menuitem value="Titulos Akas" outcome="title-akas" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="3"/>
+                </p:menuitem>
+                <p:menuitem value="Titulos Principales" outcome="title-principals" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="4"/>
+                </p:menuitem>                                
+            </p:tabMenu>
+        </div>
+        <div>
+            <img src="C:\Users\Leticia Boch\Desktop\maestria\proyectoimage.jpg" width="90%" height="60%" alt="Una foto de IMDB" align="center"/>            
+        </div>
+
+
+        <div class="card">
+            <p:linkButton outcome="index" value="MENU" 
+                          style="margin-right:50px;background-color:yellow;color: black" >
+                <f:param name="productId" value="10"/>
+            </p:linkButton>
+
+            <p:linkButton outcome="name-basics" value="Mostrar Personas" 
+                          style="margin-right:50px;background-color:#1d1d1d" >
+                <f:param name="productId" value="10"/>
+            </p:linkButton>
+
+            <p:linkButton outcome="title-basics" value="Mostrar Titulos" 
+                          style="margin-right:50px;background-color:#1d1d1d" >
+                <f:param name="productId" value="10"/>
+            </p:linkButton>
+
+            <p:linkButton outcome="title-akas" value="Mostrar Akas" 
+                          style="margin-right:50px;background-color:#1d1d1d" >
+                <f:param name="productId" value="10"/>
+            </p:linkButton>
+        </div>
+        <h:link outcome="name-basics"
+                value="Mostrar Personas"/>
+        <div></div>
+        <h:link outcome="title-basics"
+                value="Mostrar Titulos"/>
+        <div></div>
+        <h:link outcome="title-akas"
+                value="Mostrar Akas"/>
+
+        <!-- comment
+        <footer >
+            <div style="background-color:#3a3a3a; color: white; padding: 20px;" 
+                 align="center">
+                <h6><strong>Proyecto Final</strong></h6>    
+            </div>
+
+        </footer> -->
+
+    </h:body>
+
+
+</html>
+

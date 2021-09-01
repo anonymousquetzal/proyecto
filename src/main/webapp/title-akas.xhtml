@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Title.Akas.tsv</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style type="text/css">
+            h1 {font-size: 60px;}
+        </style>
+    </h:head>
+    <h:body>
+        <div class="card" style="background-color: black; color: white">          
+            <p:tabMenu activeIndex="#{param.i}">
+                <p:menuitem value="Home" outcome="index" icon="pi pi-fw pi-home">
+                    <f:param name="i" value="0"/>
+                </p:menuitem>
+                <p:menuitem value="Mostrar Personas" outcome="name-basics" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="1"/>
+                </p:menuitem>
+                <p:menuitem value="Mostrar Titulos" outcome="title-basics" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="2"/>
+                </p:menuitem>
+                <p:menuitem value="Title Sinonimos" outcome="title-akas" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="3"/>
+                </p:menuitem>
+                <p:menuitem value="Title Principals" outcome="title-principals" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="4"/>
+                </p:menuitem>                
+                <p:menuitem value="Titulo Episodios" outcome="title-akas" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="5"/>
+                </p:menuitem>                
+            </p:tabMenu>
+        </div>
+
+        <h1>Archivo Title.Akas.tsv</h1>
+        <div></div>
+
+        <p:dataTable id="dataTable"
+                     value="#{manageBean.tituloSinonimoList}"
+                     var="akas">
+
+            <p:column headerText="Id">
+                #{akas.tituloSinonimoId}   
+            </p:column>
+
+            <p:column headerText="Titulo Id">
+                #{akas.tituloId}   
+            </p:column>
+
+            <p:column headerText="Nombre"> 
+                #{akas.nombre}   
+            </p:column>
+
+            <p:column headerText="Region">
+                #{akas.region}   
+            </p:column>
+
+            <p:column headerText="Language">
+                #{akas.language}   
+            </p:column>
+
+            <p:column headerText="Tipos">
+                #{akas.tipos}   
+            </p:column>
+
+            <p:column headerText="atributos">
+                #{akas.atributos}   
+            </p:column><!-- comment -->
+
+            <p:column headerText="Original">
+                #{akas.original}   
+            </p:column>
+
+            <p:column headerText="Tipos">
+                #{akas.tipos}   
+            </p:column>
+
+            <p:column headerText="Fecha Creado">
+                <h:outputText value="#{akas.creadoEl}">
+                    <f:convertDateTime type="localDate" pattern="dd/MM/yyyy"/>
+                </h:outputText>                    
+            </p:column>
+
+            <p:column headerText="Fecha Modificado">
+                <h:outputText value="#{akas.modificadoEl}">
+                    <f:convertDateTime type="localDate" pattern="dd/MM/yyyy"/>
+                </h:outputText>                    
+            </p:column>
+
+        </p:dataTable>
+
+
+        <div class="card" style="background-color: black; color: white">          
+            <p:tabMenu activeIndex="#{param.i}">
+                <p:menuitem value="Home" outcome="index" icon="pi pi-fw pi-home">
+                    <f:param name="i" value="0"/>
+                </p:menuitem>
+                <p:menuitem value="Mostrar Personas" outcome="name-basics" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="1"/>
+                </p:menuitem>
+                <p:menuitem value="Mostrar Titulos" outcome="title-basics" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="2"/>
+                </p:menuitem>
+                <p:menuitem value="Title Sinonimos" outcome="title-akas" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="3"/>
+                </p:menuitem>
+                <p:menuitem value="Title Principals" outcome="title-principals" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="4"/>
+                </p:menuitem>                
+                <p:menuitem value="Titulo Episodios" outcome="title-akas" icon="pi pi-fw pi-file">
+                    <f:param name="i" value="5"/>
+                </p:menuitem>                
+            </p:tabMenu>
+        </div>
+
+    </h:body>
+</html>
